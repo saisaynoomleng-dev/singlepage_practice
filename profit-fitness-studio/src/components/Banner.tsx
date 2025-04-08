@@ -1,8 +1,8 @@
-import Bounded from './ui/Bounded';
 import { GiAchievement } from 'react-icons/gi';
-import Title from './ui/Title';
 import { FaDumbbell, FaUsers } from 'react-icons/fa';
 import { BiDetail } from 'react-icons/bi';
+import Bounded from './Bounded';
+import Title from './Title';
 
 const Banner = () => {
   return (

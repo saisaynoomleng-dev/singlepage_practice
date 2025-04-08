@@ -17,7 +17,7 @@ const Hero = () => {
           first-class instructors, innovatiove classes, and qualifieed staff.
         </p>
 
-        <CallToAction href="#">join now</CallToAction>
+        <CallToAction href="#service">join now</CallToAction>
       </div>
     </Bounded>
   );
