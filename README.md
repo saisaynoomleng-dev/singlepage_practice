@@ -1,10 +1,6 @@
 # singlepage_practice
 
----
-
 > The best way to learn programming is learning the hard way and write millions of code
-
----
 
 ### Projects
 
