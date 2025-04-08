@@ -20,7 +20,13 @@
   --text-fs-500: 1.75rem;
   --text-fs-400: 1rem;
   --text-fs-300: 0.875rem;
+
+  /* screens */
+  --breakpoint-md: 35em;
+  --breakpoint-lg: 45em;
 }
+
+@custom-variant hover (&:hover);
 
 @layer base {
   body {
@@ -29,6 +35,6 @@
 }
 
 @utility hero-bg {
-  background-image: url('/hero-bg.jpeg');
+  background-image: url('/hero-bg.jpg');
   @apply bg-no-repeat bg-cover bg-center;
 }

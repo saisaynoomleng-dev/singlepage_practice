@@ -19,7 +19,7 @@ const Title = ({
   return (
     <Comp
       className={clsx(
-        'font-bold',
+        'font-bold font-condensed leading-[1]',
         size === 'lg' && 'text-fs-800',
         size === 'md' && 'text-fs-700',
         size === 'sm' && 'text-fs-600',
