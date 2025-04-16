@@ -20,13 +20,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-transparent fixed z-50 flex max-md:justify-between justify-around items-center p-5 min-w-full md:backdrop-blur-sm ">
+    <header className="bg-transparent fixed z-50 flex max-md:justify-between justify-around items-center p-5 min-w-full md:backdrop-blur-sm">
       <Link href="/" className="font-semibold text-2xl ">
         Sclera&reg;
       </Link>
 
       <Button
-        className="absolute top-[.8rem] right-[1rem] z-50 size-10 hidden max-md:block"
+        className="absolute top-[.8rem] right-[1rem] z-50 size-10 hidden max-md:block border-none"
         onClick={() => setNavOpen((prev) => !prev)}
       >
         {!navOpen ? (
