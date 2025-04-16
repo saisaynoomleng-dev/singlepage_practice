@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { raleway } from '@/lib/fonts';
+import Header from '@/components/Header';
 
 export const metadata: Metadata = {
   title: 'Sclera',
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={raleway.variable}>{children}</body>
+      <body className={`${raleway.variable} relative`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

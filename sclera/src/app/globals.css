@@ -16,6 +16,10 @@
 
   /* font family */
   --font-raleway: var(--font-raleway);
+
+  /* screens */
+  --breakpoint-md: 35rem;
+  --breakpoint-lg: 45rem;
 }
 
 @layer base {
