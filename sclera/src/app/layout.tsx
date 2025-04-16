@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { raleway } from '@/lib/fonts';
 import Header from '@/components/Header';
+import { SanityLive } from '@/sanity/lib/live';
 
 export const metadata: Metadata = {
   title: 'Sclera',
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body className={`${raleway.variable} relative`}>
         <Header />
         {children}
+        <SanityLive />
       </body>
     </html>
   );
