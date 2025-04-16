@@ -9,8 +9,9 @@ const Title = ({ as: Comp = 'h1', children, className, size }: TitleProps) => {
         size === 'lg' && 'text-9xl',
         size === 'md' && 'text-6xl',
         size === 'sm' && 'text-4xl',
-        Comp === 'h2' && 'font-semibold',
-        Comp === 'h3' && 'font-semibold',
+        Comp === 'h1' && 'font-bold',
+        Comp === 'h2' && 'font-normal',
+        Comp === 'h3' && 'font-normal',
         className,
       )}
     >
