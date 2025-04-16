@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+@custom-variant hover (&:hover);
+
+@theme {
+  /* colors */
+  --color-brand-white: #ffffff;
+  --color-brand-black: #000000;
+  --color-brand-gray-100: #999999;
+  --color-brand-gray-200: #676767;
+  --color-brand-gray-300: #373737;
+  --color-brand-red: #ff3b3f;
+  --color-brand-blue: #caebf2;
+
+  /* font family */
+  --font-raleway: var(--font-raleway);
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-brand-black text-brand-white leading-normal tracking-normal text-base font-raleway;
+  }
+}
+
+@utility hero-bg {
+  background-image: url('/hero-bg.jpg');
+  @apply bg-center bg-cover;
+}
