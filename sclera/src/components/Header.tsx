@@ -26,7 +26,7 @@ const Header = () => {
       </Link>
 
       <Button
-        className="absolute top-[.8rem] right-[1rem] z-50 size-10 hidden max-md:block border-none"
+        className="relative z-50 size-10 hidden max-md:!block border-none"
         onClick={() => setNavOpen((prev) => !prev)}
       >
         {!navOpen ? (
@@ -39,7 +39,7 @@ const Header = () => {
       <nav
         className={clsx(
           'flex gap-3 max-md:flex-col max-md:fixed max-md:inset-0 max-md:bg-brand-blue/10 max-md:font-bold max-md:justify-center max-md:backdrop-blur-sm max-md:items-center transition-transform duration-500',
-          navOpen ? 'max-md:translate-y-[0%]' : 'max-md:-translate-y-[200%]',
+          navOpen ? 'max-md:translate-y-0' : 'max-md:-translate-y-full',
         )}
       >
         {links.map((link) => (
@@ -47,6 +47,7 @@ const Header = () => {
             href={link.url}
             key={link.name}
             onClick={() => setNavOpen(false)}
+            className="hover:text-brand-red"
           >
             {link.name}
           </Link>

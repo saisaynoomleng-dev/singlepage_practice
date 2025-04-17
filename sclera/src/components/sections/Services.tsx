@@ -3,6 +3,7 @@ import { FaMagnifyingGlass, FaPaperclip } from 'react-icons/fa6';
 import Bounded from '../Bounded';
 import SectionTitle from '../SectionTitle';
 import ServiceCard from '../ServiceCard';
+import { SlideInGroup } from '../animations/gsapAni';
 
 const Services = ({ id }: { id: string }) => {
   return (
@@ -11,7 +12,10 @@ const Services = ({ id }: { id: string }) => {
         services
       </SectionTitle>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-y-5 items-center justify-center">
+      <SlideInGroup
+        direction="top"
+        className="grid grid-cols-2 md:grid-cols-3 gap-y-5 items-center justify-center"
+      >
         <div className="flex flex-col items-center justify-center gap-3 group cursor-pointer ">
           <div className="bg-brand-red p-3 rounded-full group-hover:rounded-sm group-hover:rotate-135 transition-transform duration-500">
             <FaHeadphonesAlt className="size-10 group-hover:-rotate-135" />
@@ -71,7 +75,7 @@ const Services = ({ id }: { id: string }) => {
             description="Best practices take practice and a good patience."
           />
         </div>
-      </div>
+      </SlideInGroup>
     </Bounded>
   );
 };

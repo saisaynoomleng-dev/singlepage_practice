@@ -3,16 +3,22 @@ import Bounded from '../Bounded';
 import Paragraph from '../Paragraph';
 import SectionTitle from '../SectionTitle';
 import Title from '../Title';
+import { FadeInEffect, SlideInEffect } from '../animations/gsapAni';
 
 const Featured = ({ id }: { id: string }) => {
   return (
     <Bounded id={id} className="text-center ">
-      <SectionTitle as="h2" size="sm">
-        Featured
-      </SectionTitle>
+      <FadeInEffect>
+        <SectionTitle as="h2" size="sm">
+          Featured
+        </SectionTitle>
+      </FadeInEffect>
 
       <div className="grid md:grid-cols-2 featured-bg gap-y-5 place-items-center py-10 grid-rows-1 min-h-[500px]">
-        <div className="flex flex-col items-start text-start gap-2">
+        <SlideInEffect
+          direction="left"
+          className="flex flex-col items-start text-start gap-2"
+        >
           <Title as="h3" className="!font-bold text-xl">
             The start of the web
           </Title>
@@ -26,9 +32,12 @@ const Featured = ({ id }: { id: string }) => {
           >
             Learn More
           </Link>
-        </div>
+        </SlideInEffect>
 
-        <div className="flex flex-col items-end text-end gap-2">
+        <SlideInEffect
+          direction="right"
+          className="flex flex-col items-end text-end gap-2"
+        >
           <Title as="h3" className="!font-bold text-xl">
             Evolution of the Web Design
           </Title>
@@ -42,7 +51,7 @@ const Featured = ({ id }: { id: string }) => {
           >
             Learn More
           </Link>
-        </div>
+        </SlideInEffect>
       </div>
     </Bounded>
   );

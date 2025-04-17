@@ -2,13 +2,7 @@ import { urlFor } from '@/sanity/lib/image';
 import { TEAM_MEMEBER_QUERYResult } from '@/sanity/types';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  FaFacebook,
-  FaLinkedin,
-  FaLinkedinIn,
-  FaTwitter,
-  FaYoutube,
-} from 'react-icons/fa';
+import { FaFacebook, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 const TeamCard = (props: NonNullable<TEAM_MEMEBER_QUERYResult>[number]) => {
   const { name, position, links, quote, mainImage } = props;

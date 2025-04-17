@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Title from './Title';
 import { FaEnvelope, FaPhone } from 'react-icons/fa';
 import { FaLocationPin } from 'react-icons/fa6';
 

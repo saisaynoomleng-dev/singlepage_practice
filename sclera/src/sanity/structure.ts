@@ -1,7 +1,6 @@
 import { FaUser } from 'react-icons/fa';
 import { BiDetail } from 'react-icons/bi';
 import type { StructureResolver } from 'sanity/structure';
-import { HeadphonesIcon } from 'lucide-react';
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 // bounded
 export type BoundedProps = {
   as?: React.ElementType;
@@ -25,4 +27,22 @@ export type ParagraphProps = {
 export type ServiceCardProps = {
   title: string;
   description: string;
+};
+
+// slide in effects props
+export type SlideInEffectProps = {
+  children: React.ReactNode;
+  direction: 'left' | 'right' | 'top' | 'bottom';
+  offset?: number;
+  delay?: number;
+  duration?: number;
+  className?: string;
+};
+
+// fade in effect props
+export type FadeInEffectProps = {
+  children: React.ReactNode;
+  duration?: number;
+  delay?: number;
+  className?: string;
 };
