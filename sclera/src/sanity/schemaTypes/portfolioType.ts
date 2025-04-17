@@ -1,6 +1,5 @@
 import { defineField, defineType } from 'sanity';
 import { MdPermMedia } from 'react-icons/md';
-import { title } from 'process';
 
 export const portfolioType = defineType({
   name: 'portfolio',
