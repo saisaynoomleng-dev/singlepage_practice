@@ -3,6 +3,7 @@ import './globals.css';
 import { raleway } from '@/lib/fonts';
 import Header from '@/components/Header';
 import { SanityLive } from '@/sanity/lib/live';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   title: 'Sclera',
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={`${raleway.variable} relative`}>
         <Header />
         {children}
+        <Footer />
         <SanityLive />
       </body>
     </html>

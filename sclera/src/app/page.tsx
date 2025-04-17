@@ -1,4 +1,5 @@
 import AboutUs from '@/components/sections/AboutUs';
+import Contact from '@/components/sections/Contact';
 import Featured from '@/components/sections/Featured';
 import Hero from '@/components/sections/Hero';
 import Portfolio from '@/components/sections/Portfolio';
@@ -12,6 +13,7 @@ export default function Home() {
       <Portfolio id="portfolio" />
       <Services id="services" />
       <Featured id="featured" />
+      <Contact id="contact" />
     </section>
   );
 }
