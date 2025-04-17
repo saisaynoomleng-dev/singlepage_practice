@@ -38,8 +38,8 @@ const Header = () => {
 
       <nav
         className={clsx(
-          'flex gap-3 max-md:flex-col max-md:fixed max-md:inset-0 max-md:bg-brand-blue/5 max-md:backdrop-blur-lg max-md:justify-center max-md:items-center transition-transform duration-500',
-          navOpen ? 'max-md:translate-y-0' : 'max-md:-translate-y-full',
+          'flex gap-3 max-md:flex-col max-md:fixed max-md:inset-0 max-md:bg-brand-blue/10 max-md:font-bold max-md:justify-center max-md:backdrop-blur-sm max-md:items-center transition-transform duration-500',
+          navOpen ? 'max-md:translate-y-[0%]' : 'max-md:-translate-y-[200%]',
         )}
       >
         {links.map((link) => (
