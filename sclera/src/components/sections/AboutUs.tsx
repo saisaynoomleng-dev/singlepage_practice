@@ -25,9 +25,7 @@ const AboutUs = async ({ id }: { id: string }) => {
       </div>
 
       <div className="flex flex-col gap-4">
-        <SectionTitle as="h2" size="sm">
-          team members
-        </SectionTitle>
+        <SectionTitle as="h3">team members</SectionTitle>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
           {members.map((member) => (

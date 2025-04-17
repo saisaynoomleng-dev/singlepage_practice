@@ -15,8 +15,8 @@ const TeamCard = (props: NonNullable<TEAM_MEMEBER_QUERYResult>[number]) => {
 
   if (!links) return;
   return (
-    <div className="flex flex-col cursor-pointer rounded-sm ">
-      <div className="relative">
+    <div className="flex flex-col cursor-pointer rounded-sm group">
+      <div className="relative overflow-hidden">
         {mainImage?.asset?.url && (
           <Image
             src={urlFor(mainImage.asset.url)
@@ -28,7 +28,7 @@ const TeamCard = (props: NonNullable<TEAM_MEMEBER_QUERYResult>[number]) => {
             height={400}
             alt={mainImage.alt || ''}
             priority
-            className="object-cover min-w-full rounded-tl-sm rounded-tr-sm"
+            className="object-cover min-w-full rounded-tl-sm rounded-tr-sm group-hover:scale-110 transition-transform duration-500"
           />
         )}
 

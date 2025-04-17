@@ -2,7 +2,7 @@ import { TitleProps } from '@/lib/definitions';
 import clsx from 'clsx';
 
 const SectionTitle = ({
-  as: Comp = 'h1',
+  as: Comp = 'h2',
   children,
   className,
   size,
