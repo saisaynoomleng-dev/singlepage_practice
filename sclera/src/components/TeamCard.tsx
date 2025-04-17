@@ -60,7 +60,7 @@ const TeamCard = (props: NonNullable<TEAM_MEMEBER_QUERYResult>[number]) => {
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 p-3 pb-1 bg-brand-gray-300/50 text-left h-[10rem] rounded-bl-sm rounded-br-sm">
+      <div className="flex flex-col gap-3 p-3 pb-1 bg-brand-gray-300/50 text-left h-[10rem] md:h-[13rem] rounded-bl-sm rounded-br-sm overflow-hidden">
         <div>
           <p className="text-xl">{name}</p>
           <p className="font-semibold text-sm text-brand-gray-200 capitalize">

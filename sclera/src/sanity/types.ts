@@ -68,6 +68,99 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Portfolio = {
+  _id: string;
+  _type: 'portfolio';
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  slug?: Slug;
+  type?: 'business' | 'people' | 'education' | 'travel' | 'ecommerce';
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: 'reference';
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+    };
+    media?: unknown;
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: 'image';
+  };
+  description?: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: 'image';
+        _key: string;
+      }
+  >;
+};
+
+export type BlockContent = Array<
+  | {
+      children?: Array<{
+        marks?: Array<string>;
+        text?: string;
+        _type: 'span';
+        _key: string;
+      }>;
+      style?: 'normal' | 'h1' | 'h2' | 'h3' | 'h4' | 'blockquote';
+      listItem?: 'bullet';
+      markDefs?: Array<{
+        href?: string;
+        _type: 'link';
+        _key: string;
+      }>;
+      level?: number;
+      _type: 'block';
+      _key: string;
+    }
+  | {
+      asset?: {
+        _ref: string;
+        _type: 'reference';
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+      };
+      media?: unknown;
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: 'image';
+      _key: string;
+    }
+>;
+
 export type TeamMember = {
   _id: string;
   _type: 'teamMember';
@@ -163,6 +256,8 @@ export type AllSanitySchemaTypes =
   | SanityImageDimensions
   | SanityFileAsset
   | Geopoint
+  | Portfolio
+  | BlockContent
   | TeamMember
   | SanityImageCrop
   | SanityImageHotspot
@@ -188,11 +283,58 @@ export type TEAM_MEMEBER_QUERYResult = Array<{
   } | null;
   _createdAt: string;
 }>;
+// Variable: PORTFOLIOS_QUERY
+// Query: *[_type == 'portfolio' && defined(slug.current)]{  name,  description,  mainImage{    asset->{      url    },    alt  },  type } | order(name)
+export type PORTFOLIOS_QUERYResult = Array<{
+  name: string | null;
+  description: Array<
+    | {
+        children?: Array<{
+          marks?: Array<string>;
+          text?: string;
+          _type: 'span';
+          _key: string;
+        }>;
+        style?: 'blockquote' | 'h1' | 'h2' | 'h3' | 'h4' | 'normal';
+        listItem?: 'bullet';
+        markDefs?: Array<{
+          href?: string;
+          _type: 'link';
+          _key: string;
+        }>;
+        level?: number;
+        _type: 'block';
+        _key: string;
+      }
+    | {
+        asset?: {
+          _ref: string;
+          _type: 'reference';
+          _weak?: boolean;
+          [internalGroqTypeReferenceTo]?: 'sanity.imageAsset';
+        };
+        media?: unknown;
+        hotspot?: SanityImageHotspot;
+        crop?: SanityImageCrop;
+        alt?: string;
+        _type: 'image';
+        _key: string;
+      }
+  > | null;
+  mainImage: {
+    asset: {
+      url: string | null;
+    } | null;
+    alt: string | null;
+  } | null;
+  type: 'business' | 'ecommerce' | 'education' | 'people' | 'travel' | null;
+}>;
 
 // Query TypeMap
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
     "\n*[_type == 'teamMember'\n && defined(slug.current)]{\n  name,\n  slug,\n  position,\n  quote,\n  links,\n  mainImage{\n    asset->{\n      url\n    },\n    alt\n  },\n  _createdAt\n } | order(_createdAt)": TEAM_MEMEBER_QUERYResult;
+    "\n  *[_type == 'portfolio'\n && defined(slug.current)]{\n  name,\n  description,\n  mainImage{\n    asset->{\n      url\n    },\n    alt\n  },\n  type\n } | order(name)": PORTFOLIOS_QUERYResult;
   }
 }

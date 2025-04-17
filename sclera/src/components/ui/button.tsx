@@ -11,7 +11,7 @@ const buttonVariants = cva(
       variant: {
         default:
           'bg-transparent text-brand-white border border-brand-white  hover:border-brand-red cursor-pointer font-semibold hover:text-brand-red',
-        fill: 'bg-brand-red text-brand-black border-none hover:text-brand-red hover:bg-brand-white cursor-pointer font-semibold',
+        fill: 'bg-brand-white text-brand-black border-none hover:text-brand-white hover:bg-brand-black cursor-pointer font-semibold',
         outline:
           'border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50',
         secondary:
