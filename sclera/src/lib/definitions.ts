@@ -20,3 +20,9 @@ export type ParagraphProps = {
   children: React.ReactNode;
   className?: string;
 };
+
+// service card
+export type ServiceCardProps = {
+  title: string;
+  description: string;
+};

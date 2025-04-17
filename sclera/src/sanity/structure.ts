@@ -1,6 +1,7 @@
 import { FaUser } from 'react-icons/fa';
 import { BiDetail } from 'react-icons/bi';
 import type { StructureResolver } from 'sanity/structure';
+import { HeadphonesIcon } from 'lucide-react';
 
 // https://www.sanity.io/docs/structure-builder-cheat-sheet
 export const structure: StructureResolver = (S) =>
@@ -9,4 +10,5 @@ export const structure: StructureResolver = (S) =>
     .items([
       S.documentTypeListItem('teamMember').title('Team').icon(FaUser),
       S.documentTypeListItem('portfolio').title('Portfolios').icon(BiDetail),
+      S.divider(),
     ]);
