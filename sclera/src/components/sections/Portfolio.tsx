@@ -9,7 +9,7 @@ const Portfolio = async ({ id }: { id: string }) => {
   return (
     <Bounded id={id} className="flex flex-col text-center gap-3">
       <SectionTitle as="h2" size="sm">
-        Porfolio
+        Portfolio
       </SectionTitle>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
